@@ -1,4 +1,5 @@
-import prints.colors as cl
+from my_utils import prints as cl
+
 
 def color(color, name, value=''):
     print(color + str(name) + cl.ENDC, value)

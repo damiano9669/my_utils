@@ -1,6 +1,6 @@
 import pandas as pd
-import data_structures.dictionaries as dt
-import dir_file.files as fl
+import my_utils.data_structures.dictionaries as dt
+from my_utils import dir_file as fl
 
 
 def save_list(path, list):

@@ -1,7 +1,7 @@
 import os
 import urllib
 
-import web.json_utils as ju
+import my_utils.web.json_utils as ju
 import shutil
 import requests
 
