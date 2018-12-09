@@ -8,7 +8,7 @@ def get_response(url):
     :param url: url
     :return:
     """
-    response = requests.get(url)
+    response = requests.post(url)
     content = response.content.decode('utf8')
     return content
 
