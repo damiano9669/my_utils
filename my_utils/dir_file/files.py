@@ -89,7 +89,7 @@ def get_lines(path):
     :param path: file path
     :return: list list of lines
     """
-    file = open(path, 'r', encoding = "ISO-8859-1")
+    file = open(path, 'r', encoding="ISO-8859-1")
     lines = file.readlines()
     lines = [line.strip() for line in lines if len(line) > 0]
     file.close()
