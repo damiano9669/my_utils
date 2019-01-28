@@ -2,13 +2,14 @@ from bluetooth import *
 
 
 class bluetooth_master():
-    UUID = "94f39d29-7d6d-437d-973b-fba39e49d4ee"
 
-    def __init__(self, name):
+    def __init__(self, uuid, name):
         """
             init bluetooth master
+        :param uuid: uuid of the bluetooth
         :param name: name of the bluetooth
         """
+        self.uuid = uuid
         self.name = name
 
         self.server_sock = BluetoothSocket(RFCOMM)
@@ -27,8 +28,8 @@ class bluetooth_master():
         :return:
         """
         advertise_service(self.server_sock, self.name,
-                          service_id=self.UUID,
-                          service_classes=[self.UUID, SERIAL_PORT_CLASS],
+                          service_id=self.uuid,
+                          service_classes=[self.uuid, SERIAL_PORT_CLASS],
                           profiles=[SERIAL_PORT_PROFILE],
                           #                   protocols = [ OBEX_UUID ]
                           )
@@ -75,7 +76,10 @@ class bluetooth_master():
 
 
 if __name__ == '__main__':
-    bt = bluetooth_master('Test_name')
+
+    uuid = "94f39d29-7d6d-437d-973b-fba39e49d4ee"
+
+    bt = bluetooth_master(uuid, 'Test_name')
 
     bt.wait_and_connect(verbose=True)
 

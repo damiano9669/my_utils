@@ -2,13 +2,14 @@ from bluetooth import *
 
 
 class bluetooth_slave():
-    UUID = "94f39d29-7d6d-437d-973b-fba39e49d4ee"
 
-    def __init__(self, name):
+    def __init__(self, uuid, name):
         """
             init bluetooth slave
+        :param uuid: uuid of the master host
         :param name: name of the master host
         """
+        self.uuid = uuid
         self.name = name
 
         self.port = None
@@ -23,7 +24,7 @@ class bluetooth_slave():
         :param verbose: show prints or not?
         :return:
         """
-        service_matches = find_service(uuid=self.UUID, name=self.name)
+        service_matches = find_service(uuid=self.uuid, name=self.name)
 
         first_match = service_matches[0]
         self.port = first_match["port"]
@@ -68,7 +69,9 @@ class bluetooth_slave():
 
 if __name__ == '__main__':
 
-    bt = bluetooth_slave('Test_name')
+    uuid = "94f39d29-7d6d-437d-973b-fba39e49d4ee"
+
+    bt = bluetooth_slave(uuid, 'Test_name')
 
     bt.connect(verbose=True)
 
