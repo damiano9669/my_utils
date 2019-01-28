@@ -3,6 +3,11 @@ import os
 
 
 def generate_password(length=8):
+    """
+        to generate a general password
+    :param length:
+    :return: password bytes
+    """
     return binascii.hexlify(os.urandom(length))
 
 
