@@ -1,0 +1,1 @@
+name = 'bluetooth_manager'
