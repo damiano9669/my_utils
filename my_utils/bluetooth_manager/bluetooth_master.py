@@ -60,6 +60,20 @@ class bluetooth_master():
                 return data
         return None
 
+    def send_datas(self, datas, verbose=False):
+        """
+            to send datas to slave
+        :param datas: data to send
+        :param verbose:
+        :return:
+        """
+        if self.client_sock != None:
+            self.client_sock.send(datas)
+            if verbose:
+                print('Sent datas: {}'.format(datas))
+            return True
+        return False
+
     def close_connection(self, verbose=False):
         """
             to close the connection

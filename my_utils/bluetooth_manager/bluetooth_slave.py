@@ -53,6 +53,22 @@ class bluetooth_slave():
             return True
         return False
 
+    def get_recv_datas(self, verbose=False):
+        """
+            to receive data from client
+        :param verbose:
+        :return:
+        """
+        if self.sock != None:
+            data = self.sock.recv(1024)
+            if len(data) == 0:
+                return None
+            else:
+                if verbose:
+                    print('Received _{}_'.format(data))
+                return data
+        return None
+
     def close_connection(self, verbose=False):
         """
             to close the connection
