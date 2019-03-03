@@ -21,18 +21,19 @@ class bluetooth_master():
         self.client_sock = None
         self.client_info = None
 
-    def wait_and_connect(self, verbose=False):
-        """
-            wait client and connect
-        :param verbose: show prints or not?
-        :return:
-        """
         advertise_service(self.server_sock, self.name,
                           service_id=self.uuid,
                           service_classes=[self.uuid, SERIAL_PORT_CLASS],
                           profiles=[SERIAL_PORT_PROFILE],
                           #                   protocols = [ OBEX_UUID ]
                           )
+
+    def wait_and_connect(self, verbose=False):
+        """
+            wait client and connect
+        :param verbose: show prints or not?
+        :return:
+        """
 
         if verbose:
             print('Waiting for connection on RFCOMM channel {}.'.format(self.port))
