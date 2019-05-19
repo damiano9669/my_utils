@@ -98,12 +98,33 @@ def is_equal(dict1, dict2):
         return False
 
 
+def is_equal_float(dict1, dict2):
+    """
+        are dicts equal? (dicts containing float)
+    :param dict1: dictionary
+    :param dict2: dictionary
+    :return:
+    """
+    if len(dict1) == len(dict2):
+        for item in dict1:
+            if float(dict1[item]) != float(dict2[item]):
+                return False
+        return True
+    else:
+        return False
+
+
 if __name__ == '__main__':
-    dict = {
-        'a': 10,
+    dict_1 = {
+        'a': '10.1',
         'b': 123,
         'c': 54
     }
 
-    print(sum_value(dict, 5))
-    print(dict)
+    dict_2 = {
+        'a': 10.1,
+        'b': 123,
+        'c': 54
+    }
+
+    print(is_equal_float(dict_1, dict_2))
