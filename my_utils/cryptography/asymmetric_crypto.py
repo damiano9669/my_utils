@@ -1,12 +1,12 @@
+import base64
 import os
 
 from Crypto import Random
 from Crypto.Cipher import PKCS1_v1_5
 from Crypto.PublicKey import RSA
-import base64
 
-import my_utils.dir_file.files as fl
 import my_utils.dir_file.directories as d
+import my_utils.dir_file.files as fl
 
 
 def generate_keys():

@@ -1,5 +1,4 @@
 import os
-import zipfile
 
 
 def get_sub_dirs(path):
@@ -7,7 +6,7 @@ def get_sub_dirs(path):
     :param path: directory path
     :return: list of sub directories
     """
-    return [dI for dI in os.listdir(path) if os.path.isdir(os.path.join(path, dI))]
+    return [os.path.join(path, dI) for dI in os.listdir(path) if os.path.isdir(os.path.join(path, dI))]
 
 
 def check_if_dir_exists(path, create=False):

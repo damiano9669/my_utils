@@ -1,5 +1,5 @@
-import zipfile
 import os
+import zipfile
 from os.path import basename
 
 
@@ -15,7 +15,6 @@ def zip(in_path):
     if os.path.isfile(in_path):
         zip_file(in_path, out_path)
     else:
-
         zip_directory(in_path, out_path)
 
     return out_path

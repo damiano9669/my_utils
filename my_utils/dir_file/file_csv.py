@@ -1,11 +1,13 @@
 import pandas as pd
+
 import my_utils.data_structures.dictionaries as dt
 import my_utils.dir_file.files as fl
+
 
 def save_list(path, list):
     """
     :param path: csv path
-    :param list: list of items (lines)
+    :param list: list of lines to write in the file
     :return:
     """
     df = pd.DataFrame(list, index=None)

@@ -81,7 +81,7 @@ def get_files_in_dir(path):
     :param path: file path
     :return: list of files in the directory
     """
-    return [file for file in listdir(path) if isfile(join(path, file))]
+    return [os.path.join(path, file) for file in listdir(path) if isfile(join(path, file))]
 
 
 def get_lines(path):

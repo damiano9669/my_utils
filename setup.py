@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='my_utils',
-    version='4.4.2',
+    version='4.5.0',
     url='https://github.com/damiano9669/my_utils.git',
     packages=find_packages(),
     license='',
