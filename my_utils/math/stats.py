@@ -8,7 +8,7 @@ def calc_percentage(value, percentage):
     :param percentage: percentage
     :return: percentage of the value
     """
-    result = float(percentage * np.abs(value) / 100)
+    result = percentage * np.abs(value) / 100.
     return result
 
 
@@ -33,12 +33,12 @@ def difference_percentage(old_value, new_value):
     :return:
     """
     if old_value != 0:
-        ratio = float(new_value / old_value)
-        diff = float((ratio - 1) * 100)
+        ratio = new_value / old_value
+        diff = (ratio - 1) * 100.
 
         return diff
     else:
-        return float('NaN')
+        return np.NaN
 
 
 if __name__ == '__main__':
